@@ -725,3 +725,9 @@ exports.saveUnpublishedModule = function* (name, pkg) {
 exports.getUnpublishedModule = function* (name) {
   return yield* ModuleUnpublished.findByName(name);
 };
+
+exports.getAllModule = function* (){
+  var sql = 'SELECT distinct(name) AS name, version FROM module;';
+  var rows = yield* models.query(sql);
+  return rows;
+}

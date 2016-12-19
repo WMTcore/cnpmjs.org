@@ -63,7 +63,9 @@ var config = {
   // default system admins
   admins: {
     // name: email
-    wmtcore: 'wangmt@firstgrid.com',
+    fengmk2: 'fengmk2@gmail.com',
+    admin: 'admin@cnpmjs.org',
+    dead_horse: 'dead_horse@qq.com',
   },
 
   // email notification for errors
@@ -142,10 +144,10 @@ var config = {
   // enable private mode or not
   // private mode: only admins can publish, other users just can sync package from source npm
   // public mode: all users can publish
-  enablePrivate: true,
+  enablePrivate: false,
 
   // registry scopes, if don't set, means do not support scopes
-  scopes: [ '@firstgrid', '@firstgridtest', '@firstgrid-test' ],
+  scopes: [ '@cnpm', '@cnpmtest', '@cnpm-test' ],
 
   // some registry already have some private packages in global scope
   // but we want to treat them as scoped private packages,
@@ -170,16 +172,16 @@ var config = {
 
   // upstream registry is base on cnpm/cnpmjs.org or not
   // if your upstream is official npm registry, please turn it off
-  sourceNpmRegistryIsCNpm: false,
+  sourceNpmRegistryIsCNpm: true,
 
   // if install return 404, try to sync from source registry
-  syncByInstall: false,
+  syncByInstall: true,
 
   // sync mode select
   // none: do not sync any module, proxy all public modules from sourceNpmRegistry
   // exist: only sync exist modules
   // all: sync all modules
-  syncModel: 'exist', // 'none', 'all', 'exist'
+  syncModel: 'none', // 'none', 'all', 'exist'
 
   syncConcurrency: 1,
   // sync interval, default is 10 minutes
@@ -207,7 +209,7 @@ var config = {
   // custom user service, @see https://github.com/cnpm/cnpmjs.org/wiki/Use-Your-Own-User-Authorization
   // when you not intend to ingegrate with your company's user system, then use null, it would
   // use the default cnpm user system
-  userService: false,
+  userService: null,
 
   // always-auth https://docs.npmjs.com/misc/config#always-auth
   // Force npm to always require authentication when accessing the registry, even for GET requests.

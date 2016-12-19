@@ -20,7 +20,7 @@ var config = require('../config');
 
 module.exports = function* syncByInstall(next) {
   this.allowSync = false;
-  if (!config.syncByInstall) {
+  if (!this.user.isAdmin&&!config.syncByInstall) {
     // only config.enablePrivate should enable sync on install
     return yield next;
   }
